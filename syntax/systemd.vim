@@ -155,12 +155,13 @@ syn region sdServiceBlock matchgroup=sdHeader start=/^\[Service\]/ end=/^\[/me=e
 syn match sdServiceKey contained /^BusName=/
 syn match sdServiceKey contained /^\%(RemainAfterExit\|GuessMainPID\|PermissionsStartOnly\|RootDirectoryStartOnly\|NonBlocking\|ControlGroupModify\)=/ nextgroup=sdBool,sdErr
 syn match sdServiceKey contained /^\%(SysVStartPriority\|FsckPassNo\)=/ nextgroup=sdUInt,sdErr
-syn match sdServiceKey contained /^\%(Restart\|Timeout\)Sec=/ nextgroup=sdDuration,sdErr
+syn match sdServiceKey contained /^\%(Restart\|Timeout\|TimeoutStop\)Sec=/ nextgroup=sdDuration,sdErr
 syn match sdServiceKey contained /^Sockets=/ nextgroup=sdUnitList
 syn match sdServiceKey contained /^PIDFile=/ nextgroup=sdFilename,sdErr
 syn match sdServiceKey contained /^Type=/ nextgroup=sdServiceType,sdErr
 syn match sdServiceKey contained /^Restart=/ nextgroup=sdRestartType,sdErr
 syn match sdServiceKey contained /^NotifyAccess=/ nextgroup=sdNotifyType,sdErr
+syn match sdServiceKey contained /^Protect\(System\|Home\)=/ nextgroup=sdProtect
 syn keyword sdServiceType contained nextgroup=sdErr simple forking dbus oneshot notify idle
 syn keyword sdRestartType contained nextgroup=sdErr no on-success on-failure on-abort always
 syn keyword sdNotifyType  contained nextgroup=sdErr none main all
@@ -270,6 +271,7 @@ hi def link sdExecFlag          sdSymbol
 hi def link sdConditionFlag     sdSymbol
 hi def link sdEnvDashFlag       sdSymbol
 hi def link sdCapOps            sdSymbol
+hi def link sdProtect           sdSymbol
 hi def link sdCapFlags          Identifier
 "}}}
 
