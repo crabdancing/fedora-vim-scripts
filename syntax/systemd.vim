@@ -1,8 +1,9 @@
-" Filename:     systemd.vim
-" Purpose:      Vim syntax file
-" Language:     systemd unit files
-" Maintainer:   Will Woods <wwoods@redhat.com>
-" Last Change:  Sep 15, 2011
+" Filename:         systemd.vim
+" Purpose:          Vim syntax file
+" Language:         systemd unit files
+" Maintainer:       Alexandria P.  <alxpettit@gmail.com.com>
+" Original writer:  Will Woods <wwoods@redhat.com>
+" Last Change:      2018-11-05
 
 if exists("b:current_syntax") && !exists ("g:syntax_debug")
   finish
